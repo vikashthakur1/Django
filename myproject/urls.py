@@ -17,10 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from myapp.views import welcome
+from myapp.views import ProfileView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',welcome,name='welcome'),
     path('',include('myapp.urls')),
+    path('name/', ProfileView, name='profile'),
+
 ]
